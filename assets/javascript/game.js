@@ -7,19 +7,22 @@ var computerChoices = ["a", "b", "c","d","e", "f", "g", "h", "i","j", "k", "l", 
     var guesses = 9;
     var guessesLeft = 9;
     var guessedLetters = [];
-
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-    console.log(computerGuess);
+    var computerGuess ;
+    
 
     var options = ["a", "b", "c","d","e", "f", "g", "h", "i","j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t","u", "v", "w", "x", "y","z"];
 
     // This function is run whenever the user presses a key.
     document.onkeyup = function(event) {
+      
+   
 
       // Determines which key was pressed.
-      var userGuess = event.key.toLowerCase ();
+      // var userGuess = event.key.toLowerCase ();
 
-      var reset = function(){
+      var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+      var reset = function() {
         totalGuesses = 9;
         guessesLeft = 9;
         guessedLetters = [];
@@ -30,24 +33,31 @@ var computerChoices = ["a", "b", "c","d","e", "f", "g", "h", "i","j", "k", "l", 
        
       // Reworked our code from last step to use "else if" instead of lots of if statements.
 
-      // This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
-    //   if ((userGuess === "l") || (userGuess === "p") || (userGuess === "s")) {
         // guessedLetters.push (userGuess); 
         // console.log(guessedLetters)
 
         
       // if (guessesLeft > 0) {
+
+      if (guessesLeft === 9) {
+
+        computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        console.log(computerGuess);
+      }
+
       if (options.indexOf(userGuess) > -1) {
         
         if (userGuess === computerGuess)  {
           wins++;
           reset();
+          
 
         } 
         
-        if (userGuess !== computerGuess)  {
+        if (userGuess !== computerGuess && guessedLetters.indexOf(userGuess) < 0) {
           guessesLeft--;
           guessedLetters.push(userGuess);
+         
         }
 
         if (guessesLeft === 0) {
@@ -55,6 +65,7 @@ var computerChoices = ["a", "b", "c","d","e", "f", "g", "h", "i","j", "k", "l", 
           losses ++;
           guessedLetters = [];
           reset();
+          
         }
 
         // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
