@@ -49,6 +49,7 @@ var computerChoices = ["a", "b", "c","d","e", "f", "g", "h", "i","j", "k", "l", 
         
         if (userGuess === computerGuess)  {
           wins++;
+          alert("Woohoo!You are psychic!");
           reset();
           
 
@@ -63,6 +64,7 @@ var computerChoices = ["a", "b", "c","d","e", "f", "g", "h", "i","j", "k", "l", 
         if (guessesLeft === 0) {
           guessesLeft = 9;
           losses ++;
+          alert("Sorry, you are not psychic! Please try again");
           guessedLetters = [];
           reset();
           
