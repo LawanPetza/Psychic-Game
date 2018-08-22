@@ -37,12 +37,11 @@ var computerChoices = ["a", "b", "c","d","e", "f", "g", "h", "i","j", "k", "l", 
         // console.log(guessedLetters)
 
         
-      // if (guessesLeft > 0) {
 
       if (guessesLeft === 9) {
 
         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-        console.log(computerGuess);
+       
       }
 
       if (options.indexOf(userGuess) > -1) {
@@ -72,7 +71,7 @@ var computerChoices = ["a", "b", "c","d","e", "f", "g", "h", "i","j", "k", "l", 
 
         // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
         var html =
-        
+
           "<p>wins: " + wins + "</p>" +
           "<p>losses: " + losses + "</p>" +
           "<p>Guesses Left: " + guessesLeft + "</p>" +
