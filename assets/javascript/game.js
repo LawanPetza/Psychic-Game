@@ -72,7 +72,7 @@ var computerChoices = ["a", "b", "c","d","e", "f", "g", "h", "i","j", "k", "l", 
 
         // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
         var html =
-          // "<p>You chose: " + userGuess + "</p>" +
+        
           "<p>wins: " + wins + "</p>" +
           "<p>losses: " + losses + "</p>" +
           "<p>Guesses Left: " + guessesLeft + "</p>" +
