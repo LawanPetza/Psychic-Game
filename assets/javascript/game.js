@@ -41,11 +41,13 @@ var computerChoices = ["a", "b", "c","d","e", "f", "g", "h", "i","j", "k", "l", 
       if (guessesLeft === 9) {
 
         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        console.log(computerGuess)
        
       }
-
+     
       if (options.indexOf(userGuess) > -1) {
         
+         // Check if there's a match
         if (userGuess === computerGuess)  {
           wins++;
           alert("Woohoo!You are psychic!");
